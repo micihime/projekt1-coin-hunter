@@ -5,6 +5,19 @@ if (!( panacekX + panacekSirka < minceX || minceX + minceSirka < panacekX || pan
 }
 */
 var monster = document.getElementById("panacek"); //var monster = document.querySelector('#panacek');
+var top = 0;
+var left = 0;
+
+changeLeftMonsterCoord(0);
+changeTopMonsterCoord(0);
+
+function changeLeftMonsterCoord(val) {    
+	monster.style.left = val + "px";
+}
+
+function changeTopMonsterCoord(val) {    
+	monster.style.top = val + "px";
+}
 
 function moveMonsterLeft() {
 	console.log("left");

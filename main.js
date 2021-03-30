@@ -7,7 +7,10 @@ if (!( panacekX + panacekSirka < minceX || minceX + minceSirka < panacekX || pan
 
 // sem začni psát svůj program
 window.addEventListener('keydown', function (evt) {
-	console.log(evt.keyCode);
+	var element = document.getElementById("panacek");
+	var rect = element.getBoundingClientRect();
+	console.log(rect.top, rect.right, rect.bottom, rect.left);
+
 	switch(evt.keyCode) {
 		case 37: //left arrow
 			console.log("left");

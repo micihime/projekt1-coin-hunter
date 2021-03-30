@@ -8,39 +8,39 @@ var monster = document.getElementById("panacek"); //var monster = document.query
 var x = 0;
 var y = 0;
 
-changeXMonsterCoord(0);
-changeYMonsterCoord(0);
+setMonsterX(0);
+setMonsterY(0);
 
-function changeXMonsterCoord(val) {    
+function setMonsterX(val) {    
 	monster.style.left = val + "px";
 }
 
-function changeYMonsterCoord(val) {    
+function setMonsterY(val) {    
 	monster.style.top = val + "px";
 }
 
 function moveMonsterLeft() {
 	console.log("left");
 	x -= 10;
-	changeXMonsterCoord(x);
+	setMonsterX(x);
 }
 
 function moveMonsterRight() {
 	console.log("right");
 	x += 10;
-	changeXMonsterCoord(x);
+	setMonsterX(x);
 }
 
 function moveMonsterUp() {
 	console.log("up");
 	y -= 10;
-	changeYMonsterCoord(y);
+	setMonsterY(y);
 }
 
 function moveMonsterDown() {
 	console.log("down");
 	y += 10;
-	changeYMonsterCoord(y);
+	setMonsterY(y);
 }
 
 // sem začni psát svůj program

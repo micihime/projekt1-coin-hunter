@@ -8,8 +8,8 @@ var monster = document.getElementById("panacek"); //var monster = document.query
 var x = 0;
 var y = 0;
 
-changeLeftMonsterCoord(0);
-changeTopMonsterCoord(0);
+changeXMonsterCoord(0);
+changeYMonsterCoord(0);
 
 function changeXMonsterCoord(val) {    
 	monster.style.left = val + "px";
@@ -21,22 +21,26 @@ function changeYMonsterCoord(val) {    
 
 function moveMonsterLeft() {
 	console.log("left");
-
+	x -= 10;
+	changeXMonsterCoord(x);
 }
 
 function moveMonsterRight() {
 	console.log("right");
-
+	x += 10;
+	changeXMonsterCoord(x);
 }
 
 function moveMonsterUp() {
 	console.log("up");
-
+	y -= 10;
+	changeYMonsterCoord(y);
 }
 
 function moveMonsterDown() {
 	console.log("down");
-
+	y += 10;
+	changeYMonsterCoord(y);
 }
 
 // sem začni psát svůj program

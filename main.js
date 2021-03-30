@@ -4,25 +4,42 @@ if (!( panacekX + panacekSirka < minceX || minceX + minceSirka < panacekX || pan
 	// panacek a mince se prekryvaji
 }
 */
+var monster = document.getElementById("panacek"); //var monster = document.querySelector('#panacek');
+
+function moveMonsterLeft() {
+	console.log("left");
+
+}
+
+function moveMonsterRight() {
+	console.log("right");
+
+}
+
+function moveMonsterUp() {
+	console.log("up");
+
+}
+
+function moveMonsterDown() {
+	console.log("down");
+
+}
 
 // sem začni psát svůj program
 window.addEventListener('keydown', function (evt) {
-	var element = document.getElementById("panacek");
-	var rect = element.getBoundingClientRect();
-	console.log(rect.top, rect.right, rect.bottom, rect.left);
-
 	switch(evt.keyCode) {
 		case 37: //left arrow
-			console.log("left");
+			moveMonsterLeft();
 			break;
 		case 38: //up arrow
-			console.log("up");
+			moveMonsterUp();
 			break;
 		case 39: //right arrow
-			console.log("right");
+			moveMonsterRight();
 			break;
 		case 40: //down arrow
-			console.log("down");
+			moveMonsterDown();
 			break;
 		default:
 			console.log("other key")

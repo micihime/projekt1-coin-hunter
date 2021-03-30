@@ -5,5 +5,7 @@ if (!( panacekX + panacekSirka < minceX || minceX + minceSirka < panacekX || pan
 }
 */
 
-
 // sem začni psát svůj program
+window.addEventListener('keypress', function (evt) {
+	console.log("onkeypress trigerred");
+});

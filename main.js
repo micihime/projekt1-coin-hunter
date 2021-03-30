@@ -19,28 +19,30 @@ function setMonsterY(val) {    
 	monster.style.top = val + "px";
 }
 
+function modifyMonsterX(val) {
+	x += val;   
+	setMonsterX(x)
+}
+
+function modifyMonsterY(val) {
+	y += val;
+	setMonsterY(y);
+}
+
 function moveMonsterLeft() {
-	console.log("left");
-	x -= 10;
-	setMonsterX(x);
+	modifyMonsterX(-10);
 }
 
 function moveMonsterRight() {
-	console.log("right");
-	x += 10;
-	setMonsterX(x);
+	modifyMonsterX(10);
 }
 
 function moveMonsterUp() {
-	console.log("up");
-	y -= 10;
-	setMonsterY(y);
+	modifyMonsterY(-10);
 }
 
 function moveMonsterDown() {
-	console.log("down");
-	y += 10;
-	setMonsterY(y);
+	modifyMonsterY(10);
 }
 
 // sem začni psát svůj program

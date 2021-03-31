@@ -5,11 +5,15 @@ if (!( panacekX + panacekSirka < minceX || minceX + minceSirka < panacekX || pan
 }
 */
 var monster = document.getElementById("panacek"); //var monster = document.querySelector('#panacek');
-var x = 0;
-var y = 0;
+var x, y;
+initialize(0,0);
 
-setMonsterX(0);
-setMonsterY(0);
+function initialize(monsterX, monsterY) {
+	x = monsterX;
+	y = monsterY;
+	setMonsterX(monsterX);
+	setMonsterY(monsterY);
+}
 
 function setMonsterX(val) {    
 	monster.style.left = val + "px";

@@ -5,10 +5,15 @@ if (!( panacekX + panacekSirka < minceX || minceX + minceSirka < panacekX || pan
 }
 */
 var monster = document.getElementById("panacek"); //var monster = document.querySelector('#panacek');
-var x, y;
+var x, y, minX, minY, maxX, maxY, stepSize;
 initialize(0,0);
 
 function initialize(monsterX, monsterY) {
+	minX = 0;
+	minY = 0;
+	maxX = 100;//window.innerWidth;
+	maxY = 100;//window.innerHeight;
+	stepSize = 10; //pixels
 	x = monsterX;
 	y = monsterY;
 	setMonsterX(monsterX);
@@ -25,7 +30,7 @@ function setMonsterY(val) {    
 
 function modifyMonsterX(val) {
 	x += val;   
-	setMonsterX(x)
+	setMonsterX(x);
 }
 
 function modifyMonsterY(val) {
@@ -34,19 +39,27 @@ function modifyMonsterY(val) {
 }
 
 function moveMonsterLeft() {
-	modifyMonsterX(-10);
+	if ((x - stepSize) >= minX) { 
+		modifyMonsterX(-stepSize);
+	}
 }
 
 function moveMonsterRight() {
-	modifyMonsterX(10);
+	if ((x + stepSize) <= maxX) { 
+		modifyMonsterX(stepSize);
+	}
 }
 
 function moveMonsterUp() {
-	modifyMonsterY(-10);
+	if ((y - stepSize) >= minY) {
+		modifyMonsterY(-stepSize);
+	}
 }
 
 function moveMonsterDown() {
-	modifyMonsterY(10);
+	if ((y + stepSize) <= maxY) {
+		modifyMonsterY(stepSize);
+	}
 }
 
 // sem začni psát svůj program

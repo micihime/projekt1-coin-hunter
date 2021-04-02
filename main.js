@@ -39,24 +39,28 @@ function modifyMonsterY(val) {
 }
 
 function moveMonsterLeft() {
+	monster.src = "obrazky/panacek-vlevo.png";
 	if ((x - stepSize) >= minX) { 
 		modifyMonsterX(-stepSize);
 	}
 }
 
 function moveMonsterRight() {
+	monster.src = "obrazky/panacek-vpravo.png";
 	if ((x + stepSize) <= maxX) { 
 		modifyMonsterX(stepSize);
 	}
 }
 
 function moveMonsterUp() {
+	monster.src = "obrazky/panacek-nahoru.png";
 	if ((y - stepSize) >= minY) {
 		modifyMonsterY(-stepSize);
 	}
 }
 
 function moveMonsterDown() {
+	monster.src = "obrazky/panacek.png";
 	if ((y + stepSize) <= maxY) {
 		modifyMonsterY(stepSize);
 	}

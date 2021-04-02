@@ -5,7 +5,10 @@ if (!( panacekX + panacekSirka < minceX || minceX + minceSirka < panacekX || pan
 }
 */
 var monster = document.getElementById("panacek"); //var monster = document.querySelector('#panacek');
-var x, y, minX, minY, maxX, maxY, stepSize;
+var coin = document.getElementById("mince");
+var x, y, stepSize; //monster variables
+var coinX, coinY; //coin variables
+var minX, minY, maxX, maxY; //game plan variables
 initialize(0,0);
 
 function initialize(monsterX, monsterY) {
@@ -18,6 +21,7 @@ function initialize(monsterX, monsterY) {
 	y = monsterY;
 	setMonsterX(monsterX);
 	setMonsterY(monsterY);
+	placeCoin();
 }
 
 function setMonsterX(val) {    
@@ -64,6 +68,13 @@ function moveMonsterDown() {
 	if ((y + stepSize) <= maxY) {
 		modifyMonsterY(stepSize);
 	}
+}
+
+function placeCoin() {
+	coinX = Math.floor(Math.random() * (maxX - coin.width));
+	coinY = Math.floor(Math.random() * (maxY - coin.height));
+	coin.style.left = coinX + "px";
+	coin.style.top= coinY + "px";
 }
 
 // sem začni psát svůj program

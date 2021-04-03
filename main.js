@@ -39,30 +39,6 @@ function modifyMonsterY(val) {
 	setMonsterY(y);
 }
 
-function moveMonsterLeft() {
-	monster.src = "obrazky/panacek-vlevo.png";
-	if ((x - stepSize) >= minX) { 
-		modifyMonsterX(-stepSize);
-	}
-	isColliding();
-}
-
-function moveMonsterRight() {
-	monster.src = "obrazky/panacek-vpravo.png";
-	if ((x + stepSize) <= maxX) { 
-		modifyMonsterX(stepSize);
-	}
-	isColliding();
-}
-
-function moveMonsterUp() {
-	monster.src = "obrazky/panacek-nahoru.png";
-	if ((y - stepSize) >= minY) {
-		modifyMonsterY(-stepSize);
-	}
-	isColliding();
-}
-
 function moveMonsterDown() {
 	monster.src = "obrazky/panacek.png";
 	if ((y + stepSize) <= maxY) {
@@ -86,9 +62,44 @@ function increaseScore() {
 function isColliding() {
 	if (!(x + monster.width < coinX || coinX + coin.width < x 
 		|| y + monster.height < coinY || coinY + coin.height < y)) {
-			console.log("collision");
-			increaseScore();
-			placeCoin();
+			return true;
+	}
+	return false;
+}
+
+function moveMonsterLeft() {
+	monster.src = "obrazky/panacek-vlevo.png";
+	if ((x - stepSize) >= minX) { 
+		modifyMonsterX(-stepSize);
+	}
+
+	if (isColliding()) {
+		increaseScore();
+		placeCoin();
+	}
+}
+
+function moveMonsterRight() {
+	monster.src = "obrazky/panacek-vpravo.png";
+	if ((x + stepSize) <= maxX) { 
+		modifyMonsterX(stepSize);
+	}
+
+	if (isColliding()) {
+		increaseScore();
+		placeCoin();
+	}
+}
+
+function moveMonsterUp() {
+	monster.src = "obrazky/panacek-nahoru.png";
+	if ((y - stepSize) >= minY) {
+		modifyMonsterY(-stepSize);
+	}
+	
+	if (isColliding()) {
+		increaseScore();
+		placeCoin();
 	}
 }
 

@@ -39,13 +39,7 @@ function modifyMonsterY(val) {
 	setMonsterY(y);
 }
 
-function moveMonsterDown() {
-	monster.src = "obrazky/panacek.png";
-	if ((y + stepSize) <= maxY) {
-		modifyMonsterY(stepSize);
-	}
-	isColliding();
-}
+
 
 function placeCoin() {
 	coinX = Math.floor(Math.random() * (maxX - coin.width));
@@ -95,6 +89,18 @@ function moveMonsterUp() {
 	monster.src = "obrazky/panacek-nahoru.png";
 	if ((y - stepSize) >= minY) {
 		modifyMonsterY(-stepSize);
+	}
+	
+	if (isColliding()) {
+		increaseScore();
+		placeCoin();
+	}
+}
+
+function moveMonsterDown() {
+	monster.src = "obrazky/panacek.png";
+	if ((y + stepSize) <= maxY) {
+		modifyMonsterY(stepSize);
 	}
 	
 	if (isColliding()) {

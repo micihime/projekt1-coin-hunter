@@ -62,6 +62,13 @@ function isColliding() {
 	return false;
 }
 
+function isGameEnd() {
+	if (scoreVal == 5) {
+		return true;
+	}
+	return false;
+}
+
 function moveMonsterLeft() {
 	monster.src = "obrazky/panacek-vlevo.png";
 	if ((x - stepSize) >= minX) { 
@@ -71,6 +78,10 @@ function moveMonsterLeft() {
 	if (isColliding()) {
 		increaseScore();
 		placeCoin();
+	}
+
+	if (isGameEnd()) {
+		alert("You won!");
 	}
 }
 
@@ -84,6 +95,10 @@ function moveMonsterRight() {
 		increaseScore();
 		placeCoin();
 	}
+
+	if (isGameEnd()) {
+		alert("You won!");
+	}
 }
 
 function moveMonsterUp() {
@@ -96,6 +111,10 @@ function moveMonsterUp() {
 		increaseScore();
 		placeCoin();
 	}
+
+	if (isGameEnd()) {
+		alert("You won!");
+	}
 }
 
 function moveMonsterDown() {
@@ -107,6 +126,10 @@ function moveMonsterDown() {
 	if (isColliding()) {
 		increaseScore();
 		placeCoin();
+	}
+
+	if (isGameEnd()) {
+		alert("You won!");
 	}
 }
 

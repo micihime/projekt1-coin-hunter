@@ -8,15 +8,16 @@ var monster = document.getElementById("panacek"); //var monster = document.query
 var coin = document.getElementById("mince");
 var x, y, stepSize; //monster variables
 var coinX, coinY; //coin variables
-var minX, minY, maxX, maxY; //game plan variables
-initialize(0,0);
+var minX, minY, maxX, maxY, score; //game plan variables
+initialize(100,0);
 
 function initialize(monsterX, monsterY) {
 	minX = 0;
 	minY = 0;
-	maxX = 100;//window.innerWidth;
-	maxY = 100;//window.innerHeight;
+	maxX = 500;//window.innerWidth;
+	maxY = 500;//window.innerHeight;
 	stepSize = 10; //pixels
+	score = 0;
 	x = monsterX;
 	y = monsterY;
 	setMonsterX(monsterX);

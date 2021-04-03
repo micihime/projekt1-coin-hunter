@@ -78,11 +78,17 @@ function placeCoin() {
 	coin.style.top= coinY + "px";
 }
 
+function increaseScore() {
+	scoreVal++;
+	score.innerHTML = scoreVal;
+}
+
 function isColliding() {
 	if (!(x + monster.width < coinX || coinX + coin.width < x 
 		|| y + monster.height < coinY || coinY + coin.height < y)) {
-		// panacek a mince se prekryvaji
-		console.log("collision");
+			console.log("collision");
+			increaseScore();
+			placeCoin();
 	}
 }
 

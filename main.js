@@ -1,9 +1,3 @@
-// toto budeš potřebovat později
-/*
-if (!( panacekX + panacekSirka < minceX || minceX + minceSirka < panacekX || panacekY + panacekVyska < minceY || minceY + minceVyska < panacekY)) {
-	// panacek a mince se prekryvaji
-}
-*/
 var monster = document.getElementById("panacek"); //var monster = document.querySelector('#panacek');
 var coin = document.getElementById("mince");
 var score = document.getElementById("score");
@@ -50,6 +44,7 @@ function moveMonsterLeft() {
 	if ((x - stepSize) >= minX) { 
 		modifyMonsterX(-stepSize);
 	}
+	isColliding();
 }
 
 function moveMonsterRight() {
@@ -57,6 +52,7 @@ function moveMonsterRight() {
 	if ((x + stepSize) <= maxX) { 
 		modifyMonsterX(stepSize);
 	}
+	isColliding();
 }
 
 function moveMonsterUp() {
@@ -64,6 +60,7 @@ function moveMonsterUp() {
 	if ((y - stepSize) >= minY) {
 		modifyMonsterY(-stepSize);
 	}
+	isColliding();
 }
 
 function moveMonsterDown() {
@@ -71,6 +68,7 @@ function moveMonsterDown() {
 	if ((y + stepSize) <= maxY) {
 		modifyMonsterY(stepSize);
 	}
+	isColliding();
 }
 
 function placeCoin() {
@@ -80,7 +78,14 @@ function placeCoin() {
 	coin.style.top= coinY + "px";
 }
 
-// sem začni psát svůj program
+function isColliding() {
+	if (!(x + monster.width < coinX || coinX + coin.width < x 
+		|| y + monster.height < coinY || coinY + coin.height < y)) {
+		// panacek a mince se prekryvaji
+		console.log("collision");
+	}
+}
+
 window.addEventListener('keydown', function (evt) {
 	switch(evt.keyCode) {
 		case 37: //left arrow

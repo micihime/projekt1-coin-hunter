@@ -6,9 +6,11 @@ if (!( panacekX + panacekSirka < minceX || minceX + minceSirka < panacekX || pan
 */
 var monster = document.getElementById("panacek"); //var monster = document.querySelector('#panacek');
 var coin = document.getElementById("mince");
+var score = document.getElementById("score");
+
 var x, y, stepSize; //monster variables
 var coinX, coinY; //coin variables
-var minX, minY, maxX, maxY, score; //game plan variables
+var minX, minY, maxX, maxY, scoreVal; //game plan variables
 initialize(100,0);
 
 function initialize(monsterX, monsterY) {
@@ -17,7 +19,7 @@ function initialize(monsterX, monsterY) {
 	maxX = 500;//window.innerWidth;
 	maxY = 500;//window.innerHeight;
 	stepSize = 10; //pixels
-	score = 0;
+	scoreVal = 0;
 	x = monsterX;
 	y = monsterY;
 	setMonsterX(monsterX);

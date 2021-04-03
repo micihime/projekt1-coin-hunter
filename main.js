@@ -10,12 +10,15 @@ initialize(100,0);
 function initialize(monsterX, monsterY) {
 	minX = 0;
 	minY = 0;
-	maxX = 500;//window.innerWidth;
-	maxY = 500;//window.innerHeight;
+	maxX = window.innerWidth;
+	maxY = window.innerHeight;
+
 	stepSize = 10; //pixels
 	scoreVal = 0;
+	
 	x = monsterX;
 	y = monsterY;
+	
 	setMonsterX(monsterX);
 	setMonsterY(monsterY);
 	placeCoin();
@@ -38,8 +41,6 @@ function modifyMonsterY(val) {
 	y += val;
 	setMonsterY(y);
 }
-
-
 
 function placeCoin() {
 	coinX = Math.floor(Math.random() * (maxX - coin.width));

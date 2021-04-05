@@ -5,6 +5,11 @@ var score = document.getElementById("score");
 var x, y, stepSize; //monster variables
 var coinX, coinY; //coin variables
 var minX, minY, maxX, maxY, scoreVal; //game plan variables
+
+var gameMusic = document.getElementById("hudba");
+var endSound = document.getElementById("zvukfanfara");
+var coinSound = document.getElementById("zvukmince");
+
 initialize(100,0);
 
 function initialize(monsterX, monsterY) {
@@ -76,11 +81,13 @@ function moveMonsterLeft() {
 	}
 
 	if (isColliding()) {
+		coinSound.play();
 		increaseScore();
 		placeCoin();
 	}
 
 	if (isGameEnd()) {
+		endSound.play();
 		alert("You won!");
 	}
 }
@@ -92,11 +99,13 @@ function moveMonsterRight() {
 	}
 
 	if (isColliding()) {
+		coinSound.play();
 		increaseScore();
 		placeCoin();
 	}
 
 	if (isGameEnd()) {
+		endSound.play();
 		alert("You won!");
 	}
 }
@@ -108,11 +117,13 @@ function moveMonsterUp() {
 	}
 	
 	if (isColliding()) {
+		coinSound.play();
 		increaseScore();
 		placeCoin();
 	}
 
 	if (isGameEnd()) {
+		endSound.play();
 		alert("You won!");
 	}
 }
@@ -124,11 +135,13 @@ function moveMonsterDown() {
 	}
 	
 	if (isColliding()) {
+		coinSound.play();
 		increaseScore();
 		placeCoin();
 	}
 
 	if (isGameEnd()) {
+		endSound.play();
 		alert("You won!");
 	}
 }

@@ -12,7 +12,7 @@ var coinSound = document.getElementById("zvukmince");
 
 initialize(100,0);
 
-function initialize(monsterX, monsterY) {
+function initialize(monsterX, monsterY) {	
 	minX = 0;
 	minY = 0;
 	maxX = window.innerWidth;
@@ -147,6 +147,8 @@ function moveMonsterDown() {
 }
 
 window.addEventListener('keydown', function (evt) {
+	gameMusic.play();
+
 	switch(evt.keyCode) {
 		case 37: //left arrow
 			moveMonsterLeft();
